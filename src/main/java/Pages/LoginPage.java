@@ -19,4 +19,14 @@ public class LoginPage extends BaseTest {
         webDriver.findElement(By.cssSelector("[value='Log In']")).click();
         return this;
     }
+
+    public String getErrorMessage(){
+        String errorText = webDriver.findElement(By.cssSelector("[class='error']")).getText();
+        return errorText;
+    }
+
+    public LoginPage clickRegister(){
+        webDriver.findElement(By.cssSelector("[href*='register.htm']")).click();
+        return this;
+    }
 }
